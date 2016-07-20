@@ -1,0 +1,219 @@
+﻿<Page
+    x:Class="Projects.debitcategory"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Projects"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="Category">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/bg.jpg"
+                    Stretch="UniformToFill" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--<<<<<<<<<<<<<<<<<<Title Panel>>>>>>>>>>>>>>>>>>>>>>>>>-->
+           
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,17,0,16" HorizontalAlignment="Center">
+            <TextBlock x:Name="ApplicationTitle" Text="My Wallet" FontFamily="Century Gothic" Foreground="AliceBlue" FontSize="30"/>
+        </StackPanel>
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<1st Grid Starts from here>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+        
+        <Grid x:Name="firstgrid" HorizontalAlignment="Center" Margin="0,-30,0,0" Grid.Row="1">
+        <StackPanel>
+                <Button x:Name="movies" Margin="0,60,0,0" Height="50" Width="50" Click="movies_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Assets/movies.png" Height="80"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="health" Margin="70,60,0,0" Height="50" Width="50" Click="health_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Assets/health.png" Height="80"/>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+            </StackPanel>
+
+            <StackPanel>
+                <Button x:Name="house" Margin="140,60,0,0" Width="50" Height="50" Click="house_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Assets/house.png" Height="80"/>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+            </StackPanel>
+        </Grid>
+        
+        
+        <!--<<<<<<<<<<<<<<<<<<<<<2nd Grid Starts here>>>>>>>>>>>>>>>>>>>>>>>-->
+
+
+        <Grid x:Name="secondgrid" HorizontalAlignment="Center" Margin="0,50,0,0" Grid.Row="1">
+            <StackPanel>
+                <Button x:Name="food" Margin="0,60,0,0"  Width="50" Height="50" Click="food_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Assets/food.png" Height="80"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="transport" Margin="70,60,0,0"  Width="50" Height="50" Click="transport_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Assets/transport.png" Height="80"/>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+            </StackPanel>
+
+            <StackPanel>
+                <Button x:Name="sports" Margin="140,60,0,0" Width="50" Height="50" Click="sports_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Assets/sports.png" Height="80"/>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!--<<<<<<<<<<<<<<<<<<<<<3rd Grid Starts here>>>>>>>>>>>>>>>>>>>>>>>-->
+
+
+        <Grid x:Name="thirdgrid" HorizontalAlignment="Center" Margin="0,130,0,0" Grid.Row="1">
+            <StackPanel>
+                <Button x:Name="bills" Margin="0,60,0,0" Height="50" Width="50" Click="bills_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Assets/bill.png" Height="80"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="shopping" Margin="70,60,0,0"  Height="50" Width="50" Click="shopping_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Assets/shopping.png" Height="80"/>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+            </StackPanel>
+
+            <StackPanel>
+                <Button x:Name="party" Margin="140,60,0,0"  Height="50" Width="50" Click="party_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Assets/party.png" Height="80"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <TextBox Name="categorybox" Height="10" Visibility="Collapsed" />
+        </Grid>
+        
+        <!--<<<<<<<<<<<<<<<<<<<<Grid Padding Ends here>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+        <!--Responsive coding-->
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowStates">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="firstgrid.(Margin)" Value="-200,20,0,0" />
+                        <Setter Target="secondgrid.(Margin)" Value="-200,100,0,0" />
+                        <Setter Target="thirdgrid.(Margin)" Value="-200,180,0,0" />
+                        
+                        <Setter Target="movies.(Height)" Value="80" />
+                        <Setter Target="movies.(Width)" Value="80" />
+                        <Setter Target="movies.(Margin)" Value="150,60,0,0" />
+                        
+                        <Setter Target="health.(Height)" Value="80" />
+                        <Setter Target="health.(Width)" Value="80" />
+                        <Setter Target="health.(Margin)" Value="300,60,0,0" />
+
+                        <Setter Target="house.(Height)" Value="80" />
+                        <Setter Target="house.(Width)" Value="80" />
+                        <Setter Target="house.(Margin)" Value="450,60,0,0" />
+                        
+                         <!--<<<<<<2nd Grid Starts here>>>>>>>>-->
+
+                        <Setter Target="food.(Height)" Value="80" />
+                        <Setter Target="food.(Width)" Value="80" />
+                        <Setter Target="food.(Margin)" Value="150,150,0,0" />
+
+                        <Setter Target="transport.(Height)" Value="80" />
+                        <Setter Target="transport.(Width)" Value="80" />
+                        <Setter Target="transport.(Margin)" Value="300,150,0,0" />
+
+                        <Setter Target="sports.(Height)" Value="80" />
+                        <Setter Target="sports.(Width)" Value="80" />
+                        <Setter Target="sports.(Margin)" Value="450,150,0,0" />
+
+                        <!--<<<<<3rd Grid Starts here>>>>>>>>-->
+
+                        <Setter Target="bills.(Height)" Value="80" />
+                        <Setter Target="bills.(Width)" Value="80" />
+                        <Setter Target="bills.(Margin)" Value="150,240,0,0" />
+                        
+                        <Setter Target="shopping.(Height)" Value="80" />
+                        <Setter Target="shopping.(Width)" Value="80" />
+                        <Setter Target="shopping.(Margin)" Value="300,240,0,0" />
+
+                        <Setter Target="party.(Height)" Value="80" />
+                        <Setter Target="party.(Width)" Value="80" />
+                        <Setter Target="party.(Margin)" Value="450,240,0,0" />
+
+                        <!--<Setter Target="shopping.(Height)" Value="80" />
+                        <Setter Target="shopping.(Width)" Value="80" />
+                        <Setter Target="shopping.(Margin)" Value="300,240,0,0" />
+
+                        <Setter Target="party.(Height)" Value="80" />
+                        <Setter Target="party.(Width)" Value="80" />
+                        <Setter Target="party.(Margin)" Value="450,240,0,0" />-->
+
+                        <!--<Setter Target="IngredientsPanel.(Grid.Column)" Value="1" />
+                        <Setter Target="DirectionsPanel.(Grid.Row)" Value="0" />
+                        <Setter Target="DirectionsPanel.(Grid.Column)" Value="2" />
+                        <Setter Target="ImagePanel.(Grid.ColumnSpan)" Value="1" />
+                        <Setter Target="IngredientsPanel.(Grid.ColumnSpan)" Value="1" />
+                        <Setter Target="DirectionsPanel.(Grid.ColumnSpan)" Value="1" />-->
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--<Setter Target="IngredientsPanel.(Grid.Row)" Value="1" />
+                        <Setter Target="IngredientsPanel.(Grid.Column)" Value="0" />
+                        <Setter Target="DirectionsPanel.(Grid.Row)" Value="2" />
+                        <Setter Target="DirectionsPanel.(Grid.Column)" Value="0" />
+                        <Setter Target="ImagePanel.(Grid.ColumnSpan)" Value="3" />
+                        <Setter Target="IngredientsPanel.(Grid.ColumnSpan)" Value="3" />
+                        <Setter Target="DirectionsPanel.(Grid.ColumnSpan)" Value="3" />-->
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>

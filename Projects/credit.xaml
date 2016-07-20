@@ -1,0 +1,209 @@
+﻿<Page
+    x:Class="Projects.credit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Projects"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="Auto" Height="Auto">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/bg.jpg"
+                    Stretch="UniformToFill" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="dTitlePanel" Grid.Row="0" Margin="0,17,0,16" HorizontalAlignment="Center" MaxHeight="600" MaxWidth="400">
+            <TextBlock x:Name="dApplicationTitle" Text="My Wallet" FontFamily="Century Gothic" Foreground="AliceBlue" FontSize="30"/>
+            <Button Margin="-35,-35,0,0" HorizontalAlignment="Left" x:Name="backbutton" FontFamily="Century Gothic" Click="back">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="Assets/back.png" Height="20" Width="30"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="creditContentPanel" Grid.Row="1" Margin="12,-20,12,0" Height="300" >
+
+            <StackPanel x:Name="mainpanel" VerticalAlignment="Center">
+
+                <TextBlock x:Name="creditamountblk" Width="140" FontSize="12" Margin="0,0,0,10" Foreground="White" FontFamily="Century Gothic" VerticalAlignment="Center">Enter the Credit Amount</TextBlock>
+                
+                
+                    <TextBox Width="150" x:Name="creditamount" Text="" BorderBrush="Black" BorderThickness="2" FontFamily="Century Gothic" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" PreventKeyboardDisplayOnProgrammaticFocus="True" PlaceholderText="$" IsReadOnly="True" />
+
+               
+                <TextBox Width="280" FontSize="12" BorderThickness="2"  x:Name="note" FontFamily="Century Gothic" VerticalAlignment="Center" PlaceholderText="Add Note" Margin="0,10,0,0">
+                
+                </TextBox>
+                <Grid Width="280">
+                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                        <Button Margin="10,5" x:Name="creditbutton" FontFamily="Century Gothic" FontSize="10" Content="Credit" Click="creditbutton_Click" />
+                    </StackPanel>
+                    <Button Margin="20,5,0,5" x:Name="creditcategory" FontFamily="Century Gothic" FontSize="10" Content="Catergory" Click="creditcategory_Click">
+
+                    </Button>
+                </Grid>
+                <!--Calculator Stackpanel Starts from here-->
+
+                <Grid x:Name="Calculator" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,-110,0,0" Height="auto" Width="auto">
+
+                    <Button x:Name="seven"  Content="7" HorizontalAlignment="Left" Margin="11,115,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18"  Click="Button_Click_1">
+                    </Button>
+
+                    <!--<TextBox Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,20,0,0" HorizontalAlignment="Left" Width="201" FontSize="20" Background="Black" BorderThickness="2" Name="tb" Text="1+1=2">     </TextBox>-->
+                    <Button  x:Name="eight" Content="8" HorizontalAlignment="Left" Margin="62,115,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button  x:Name="nine" Content="9" HorizontalAlignment="Left" Margin="113,115,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button x:Name="div"  Content="/" HorizontalAlignment="Left" Margin="164,115,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button  x:Name="four" Content="4" HorizontalAlignment="Left" Margin="11,151,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button x:Name="five"  Content="5" HorizontalAlignment="Left" Margin="62,151,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button x:Name="six"  Content="6" HorizontalAlignment="Left" Margin="113,151,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button  x:Name="mul" Content="*" HorizontalAlignment="Left" Margin="164,151,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+                    <Button x:Name="Clr"  Content="Clr" HorizontalAlignment="Left" Margin="215,187,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Clr_Click_1">
+                    </Button>
+
+                    <Button  x:Name="R" Content="R" HorizontalAlignment="Left" Margin="215,151,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="R_Click_1">
+                    </Button>
+                    <Button  x:Name="one"  Content="1" HorizontalAlignment="Left" Margin="11,187,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button  x:Name="second" Content="2" HorizontalAlignment="Left" Margin="62,187,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button  x:Name="three" Content="3" HorizontalAlignment="Left" Margin="113,187,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button  x:Name="mins" Content="-" HorizontalAlignment="Left" Margin="164,187,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button  x:Name="zero" Content="0" HorizontalAlignment="Left" Margin="11,223,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button  x:Name="equals" Content="=" HorizontalAlignment="Left" Margin="113,223,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Result_click">
+                    </Button>
+
+                    <Button  x:Name="deci" Content="." HorizontalAlignment="Left" Margin="62,223,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+
+                    <Button  x:Name="plusb" Content="+" HorizontalAlignment="Left" Margin="164,223,0,0" VerticalAlignment="Top" Width="46" Height="31" FontSize="18" BorderThickness="2" Click="Button_Click_1">
+                    </Button>
+                    
+                </Grid>
+            </StackPanel>
+
+
+        </Grid>
+       
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowStates">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--<Setter Target="seven.(Width)" Value="60" />
+                        <Setter Target="seven.(Height)" Value="45" />
+
+                        <Setter Target="eight.(Width)" Value="60" />
+                        <Setter Target="eight.(Height)" Value="45" />-->
+
+                        <!--<Setter Target="nine.(Width)" Value="60" />
+                        <Setter Target="nine.(Height)" Value="45" />
+
+                        <Setter Target="zero.(Width)" Value="60" />
+                        <Setter Target="zero.(Height)" Value="45" />
+
+                        <Setter Target="four.(Width)" Value="60" />
+                        <Setter Target="four.(Height)" Value="45" />
+
+                        <Setter Target="three.(Width)" Value="60" />
+                        <Setter Target="three.(Height)" Value="45" />
+
+                        <Setter Target="two.(Width)" Value="60" />
+                        <Setter Target="two.(Height)" Value="45" />
+
+                        <Setter Target="one.(Width)" Value="60" />
+                        <Setter Target="one.(Height)" Value="45" />
+
+                        <Setter Target="five.(Width)" Value="60" />
+                        <Setter Target="five.(Height)" Value="45" />
+
+                        <Setter Target="mul.(Width)" Value="60" />
+                        <Setter Target="mul.(Height)" Value="45" />
+
+                        <Setter Target="equals.(Width)" Value="60" />
+                        <Setter Target="equals.(Height)" Value="45" />
+                        
+                        <Setter Target="deci.(Width)" Value="60" />
+                        <Setter Target="deci.(Height)" Value="45" />
+                        
+                        <Setter Target="plusb.(Width)" Value="60" />
+                        <Setter Target="plusb.(Height)" Value="45" />
+
+                        <Setter Target="min.(Width)" Value="60" />
+                        <Setter Target="min.(Height)" Value="45" />
+
+                        <Setter Target="div.(Width)" Value="60" />
+                        <Setter Target="div.(Height)" Value="45" />
+
+                        <Setter Target="R.(Width)" Value="60" />
+                        <Setter Target="R.(Height)" Value="45" />
+
+                        <Setter Target="Clr.(Width)" Value="60" />
+                        <Setter Target="Clr.(Height)" Value="45" />-->
+                        <Setter Target="creditcategory.(Height)" Value="45" />
+                        <Setter Target="creditcategory.(Width)" Value="100" />
+                        <Setter Target="creditcategory.(FontSize)" Value="16" />
+                        
+                        <Setter Target="creditbutton.(Height)" Value="45" />
+                        <Setter Target="creditbutton.(Width)" Value="100" />
+                        <Setter Target="creditbutton.(FontSize)" Value="16" />
+                        
+                        <Setter Target="creditContentPanel.(Margin)" Value="0,-50,0,0" />
+                        <Setter Target="creditContentPanel.(Height)" Value="400" />
+                        <Setter Target="creditamountblk.(Width)" Value="250" />
+                        <Setter Target="creditamountblk.(FontSize)" Value="20" />
+                        <Setter Target="creditamount.(Margin)" Value="0,10,0,10" />
+                        <Setter Target="creditamount.(Width)" Value="200" />
+                       
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--<Setter Target="IngredientsPanel.(Grid.Row)" Value="1" />
+                        <Setter Target="IngredientsPanel.(Grid.Column)" Value="0" />
+                        <Setter Target="DirectionsPanel.(Grid.Row)" Value="2" />
+                        <Setter Target="DirectionsPanel.(Grid.Column)" Value="0" />
+                        <Setter Target="ImagePanel.(Grid.ColumnSpan)" Value="3" />
+                        <Setter Target="IngredientsPanel.(Grid.ColumnSpan)" Value="3" />
+                        <Setter Target="DirectionsPanel.(Grid.ColumnSpan)" Value="3" />-->
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>

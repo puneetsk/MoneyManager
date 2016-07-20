@@ -1,0 +1,111 @@
+﻿<Page
+    x:Class="Projects.settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Projects"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:ConnectionId='1' x:Name="Settings">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/bg.jpg"
+                    Stretch="UniformToFill" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:ConnectionId='2' x:Name="TitlePanel" Grid.Row="0" Margin="0,17,0,16" HorizontalAlignment="Center">
+            <TextBlock x:ConnectionId='12' x:Name="ApplicationTitle" Text="My Wallet" FontFamily="Century Gothic" Foreground="AliceBlue" FontSize="30"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:ConnectionId='3' x:Name="ContentPanel" Grid.Row="1" Margin="12,-30,12,0" Height="300" >
+
+            <StackPanel x:ConnectionId='4' x:Name="mblock" VerticalAlignment="Center">
+
+                <TextBlock x:ConnectionId='5' x:Name="currency" TextAlignment="Center" Width="280" Height="30" FontSize="20" Foreground="White" FontFamily="Century Gothic" VerticalAlignment="Center" Margin="0,0,0,0">Select Currency</TextBlock>
+                <ComboBox x:ConnectionId='6' x:Name="currencycombo" HorizontalAlignment="Center" SelectedIndex="0">
+                    <ComboBoxItem>Dollar</ComboBoxItem>
+                    <ComboBoxItem>Yen</ComboBoxItem>
+                    <ComboBoxItem>Euro</ComboBoxItem>
+                </ComboBox>
+                <TextBox x:ConnectionId='7' Width="150" BorderThickness="2" Margin="233,5,211,0" HorizontalAlignment="Center"  x:Name="budgetbox" FontFamily="Century Gothic" VerticalAlignment="Center" PlaceholderText="Please Enter Amount" TextAlignment="Center" FontSize="12"/>
+
+
+
+                <TextBlock x:ConnectionId='8' x:Name="remainder" Width="280"  Height="30" FontSize="20" Foreground="White" FontFamily="Century Gothic" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center">Set Remainder</TextBlock>
+                <ComboBox x:ConnectionId='9' HorizontalAlignment="Center" Margin="0,0,0,0" Width="101" x:Name="remainbox">
+                    <ComboBoxItem>Electricity Bill</ComboBoxItem>
+                    <ComboBoxItem>Telephone Bill</ComboBoxItem>
+                    <ComboBoxItem>Rent</ComboBoxItem>
+                    <ComboBoxItem>Insurance</ComboBoxItem>
+                    <ComboBoxItem>Internet Bill</ComboBoxItem>
+                    <ComboBoxItem>Gas Bill</ComboBoxItem>
+                    <ComboBoxItem>School Fees</ComboBoxItem>
+                    <ComboBoxItem>Other</ComboBoxItem>
+                </ComboBox>
+                <DatePicker x:ConnectionId='10' x:Name="dtpick" HorizontalAlignment="Center" Width="288" Margin="31,0,9,0"/>
+                <Grid Width="280">
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <Button x:ConnectionId='11' Margin="0" x:Name="okbutton" HorizontalAlignment="Center" FontFamily="Century Gothic" Content="OK"                       />
+                    </StackPanel>
+
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+
+
+
+        <!--<<<<<<<<<<<<<<<<Responsive Editing>>>>>>>>>>>>>>>>>>-->
+
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='13' x:Name="WindowStates">
+                <VisualState x:ConnectionId='14' x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="currency.(FontSize)" Value="30"/>
+                        <Setter Target="currency.(Height)" Value="50"/>
+                        <Setter Target="currency.(Margin)" Value="0,-90,0,0"/>
+                        <Setter Target="currencycombo.(Width)" Value="150"/>
+                        <Setter Target="currencycombo.(Margin)" Value="10,0,10,10"/>
+                        <Setter Target="budgetbox.(Margin)" Value="10,0,10,10"/>
+                        <Setter Target="budgetbox.(Width)" Value="200"/>
+                        <Setter Target="budgetbox.(FontSize)" Value="20"/>
+                        <Setter Target="remainder.(FontSize)" Value="30"/>
+                        <Setter Target="remainder.(Height)" Value="50"/>
+                        <Setter Target="remainbox.(Margin)" Value="10,0,10,10"/>
+                        <Setter Target="remainbox.(Width)" Value="150"/>
+                        <Setter Target="okbutton.(Width)" Value="50"/>
+                        <Setter Target="okbutton.(Height)" Value="50"/>
+                        <Setter Target="okbutton.(FontSize)" Value="20"/>
+                        <Setter Target="okbutton.(Margin)" Value="10,10,10,0"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='15' x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--<Setter Target="IngredientsPanel.(Grid.Row)" Value="1" />
+                        <Setter Target="IngredientsPanel.(Grid.Column)" Value="0" />
+                        <Setter Target="DirectionsPanel.(Grid.Row)" Value="2" />
+                        <Setter Target="DirectionsPanel.(Grid.Column)" Value="0" />
+                        <Setter Target="ImagePanel.(Grid.ColumnSpan)" Value="3" />
+                        <Setter Target="IngredientsPanel.(Grid.ColumnSpan)" Value="3" />
+                        <Setter Target="DirectionsPanel.(Grid.ColumnSpan)" Value="3" />-->
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <!--#endregion-->
+    </Grid>
+</Page>
+
